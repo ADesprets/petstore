@@ -20,12 +20,6 @@ curl -LO https://petstore.swagger.io/v2/swagger.json
 curl -LO https://petstore3.swagger.io/api/v3/openapi.json
 ```
 
-**Hint**: To get the two "corrected" API specification files working in IBM API Connect:
-```
-curl -LO https://github.com/ADesprets/petstore/blob/master/materials/swagger-petstore_1.0.6.ok.yaml
-curl -LO https://github.com/ADesprets/petstore/blob/master/materials/swagger-petstore-openapi-3-0_1.0.9.ok.yaml
-```
-
 In the following chapter some explanations on how to use the API and the explanations of what was done to make it work.
 
 ## OAS 2
