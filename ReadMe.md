@@ -1,6 +1,7 @@
 # Petstore in IBM API Connect
-This article explains how to use the swagger/Open API specificationd provided by Petstore both with OAS V2 and V3.
-This is a point in time statement. The behaviour of IBM API Connect may change in the future.
+This article explains how to use the swagger/Open API specifications for the  Petstore API provided by swagger.io both with OAS V2 and V3 in IBM API Connect.
+This is a point in time statement. The behaviour of IBM API Connect may change in the future and simplifies the use of those APIs.
+
 I have used for this test IBM API Connect 10.0.1.5
 
 The use of the petstore sample provided by Swagger.io has been used quite a lot in the past. 
@@ -13,15 +14,22 @@ The two Swaggers based respectively on 1.0.6 (OAS2) and 1.0.9 (OAS3) can be foun
 | 1.0.6 (OAS2) | https://petstore.swagger.io/  | https://petstore.swagger.io/v2/swagger.json      | [apic oas2](./materials/swagger-petstore_1.0.6.ok.yaml)             |
 | 1.0.9 (OAS3) | https://petstore3.swagger.io/ | https://petstore3.swagger.io/api/v3/openapi.json | [apic oas3](./materials/swagger-petstore-openapi-3-0_1.0.9.ok.yaml) |
 
-**Hint**: to get the two original API specification files:
+**Hint**: To get the two original API specification files:
 ```
 curl -LO https://petstore.swagger.io/v2/swagger.json
-curl -LO https://petstore3.swagger.io/api/v3/openapi.json 
+curl -LO https://petstore3.swagger.io/api/v3/openapi.json
 ```
+
+**Hint**: To get the two "corrected" API specification files working in IBM API Connect:
+```
+curl -LO https://github.com/ADesprets/petstore/blob/master/materials/swagger-petstore_1.0.6.ok.yaml
+curl -LO https://github.com/ADesprets/petstore/blob/master/materials/swagger-petstore-openapi-3-0_1.0.9.ok.yaml
+```
+
+In the following chapter some explanations on how to use the API and the explanations of what was done to make it work.
 
 ## OAS 2
 ![Add API](./images/oas2-addapi.png "Add API")
-
 
 ![Add from existing API](./images/oas2-addfromexisting.png "Add from existing API")
 
@@ -50,6 +58,8 @@ Then testing it
 ![toto](./images/swagger-test-tab.png "toto")
 
 ## OAS 3
+When using the Open API V3, the import of the API is slightly different as explained here.
+
 ![toto](./images/oas3-addapi.png "toto")
 ![toto](./images/oas3-select-openapi-json.png "toto")
 ![toto](./images/oas3-addapi-edit.png "toto")
@@ -63,11 +73,12 @@ The API contains errors.
 ![toto](./images/oas3-errors-ori.png "toto")
 
 # Explanations
+This chapter explains in more details the changes operated. You can also use the diff on the various yaml files located in materials directory.
+
 ## OAS 2
 step 1 - Remove upload image path
 step 2 - Fix api key
 ![toto](./images/oas2-swagger-apikey-error.png "toto")
-![toto](./images/oas2-swagger-petstore_1.0.6-fix-api-security-step2.png "toto")
 step 3 - Remove unsupported parameters definitions
             default: available
           collectionFormat: multi
@@ -82,9 +93,3 @@ step 2 - Remove security definitions (schemes and security)
 step 3 - Fix the endpoint within the properties
 step 4 - Fix the endpoint within the properties
 ![toto](./images/oas3-fix-apikey-step4.png "toto")
-
-
-![toto](./images/toto.png "toto")
-![toto](./images/toto.png "toto")
-![toto](./images/toto.png "toto")
-![toto](./images/toto.png "toto")
