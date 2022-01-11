@@ -14,6 +14,12 @@ The two Swaggers based respectively on 1.0.6 (OAS2) and 1.0.9 (OAS3) can be foun
 | 1.0.6 (OAS2) | https://petstore.swagger.io/  | https://petstore.swagger.io/v2/swagger.json      | [apic oas2](./materials/swagger-petstore_1.0.6.ok.yaml)             |
 | 1.0.9 (OAS3) | https://petstore3.swagger.io/ | https://petstore3.swagger.io/api/v3/openapi.json | [apic oas3](./materials/swagger-petstore-openapi-3-0_1.0.9.ok.yaml) |
 
+**Hint**: To get the two "corrected" API specification files:
+```
+curl -LO https://raw.githubusercontent.com/ADesprets/petstore/master/materials/swagger-petstore_1.0.6.ok.yaml
+curl -LO https://raw.githubusercontent.com/ADesprets/petstore/master/materials/swagger-petstore-openapi-3-0_1.0.9.ok.yaml
+```
+
 **Hint**: To get the two original API specification files:
 ```
 curl -LO https://petstore.swagger.io/v2/swagger.json
