@@ -5,7 +5,7 @@ This is a point in time statement. The behaviour of IBM API Connect may change i
 I have used for this test IBM API Connect 10.0.1.5
 
 The use of the petstore sample provided by Swagger.io has been used quite a lot in the past. 
-Unfortunately, it needs to be updated in order to work without any issues in API Connect.
+It needs to be updated in order to work without any issues in API Connect. The security configuration for OAuth requires a configuration that does not exsit by default for example.
 
 The two Swaggers based respectively on 1.0.6 (OAS2) and 1.0.9 (OAS3) can be found below.
 
