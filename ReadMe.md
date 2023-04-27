@@ -1,12 +1,12 @@
 # Petstore in IBM API Connect
 
 This article explains how to use the swagger/Open API specifications for the  Petstore API provided by swagger.io both with OAS V2 and V3 in IBM API Connect.
-This is a point in time statement. The behaviour of IBM API Connect may change in the future and simplifies the use of those APIs.
+This is a point in time statement. The behavior of IBM API Connect may change in the future and simplifies the use of those APIs.
 
-I have updated this artcile recently (26th April 2023) in order to use both APIC Connect versions 10.0.1.9 and 10.0.5.2. So I reorganised it a little. Since the API Connect user interface does not change I do not take screen captures for both versions, but only with 10.0.5.2 and will indicate if they are differences.
+I have updated this article recently (26th April 2023) to use both APIC Connect versions 10.0.1.9 and 10.0.5.2. So I reorganised it a little. Since the API Connect user interface does not change, I do not take screen captures for both versions, but only with 10.0.5.2 and will indicate if they are differences.
 
 The use of the petstore sample provided by Swagger.io has been used quite a lot in the past.
-It needs to be updated in order to work without any issues in API Connect. The security configuration for OAuth requires a configuration that does not exist by default for example.
+It needs to be updated to work without any issues in API Connect. The security configuration for OAuth requires a configuration that does not exist by default for example.
 
 The two Swaggers based respectively on 1.0.6 (OAS2) and 1.0.9 (OAS3) can be found below.
 
@@ -42,39 +42,42 @@ Notice that the original PetStore API re protected with OAuth which requires a s
 
 ![Select swagger.json](./images/oas2-select-swagger-json.png "Select swagger.json")
 
-![toto](./images/oas2-add-api-swagger.details.png "toto")
+![API Details](./images/oas2-add-api-swagger.details.png "API Details")
 
-![toto](./images/oas2-add-api-activate-api.png "toto")
+![Activate API](./images/oas2-add-api-activate-api.png "Activate API")
 
-![toto](./images/oas2-add-api-end.png "toto")
+![Last step](./images/oas2-add-api-end.png "Last step")
 
 After clicking on the Validate button, we see that the API contains error.
 
-![toto](./images/oas2-api-errors.png "toto")
+![Show errors](./images/oas2-api-errors.png "Show errors")
 
-**Hint**: To track the changes I'm going to download the orginal API on the disk (to get it in yaml format).
-![toto](./images/oas2-swagger-ori-download.png "toto")
+**Hint**: To track the changes I'm going to download the original API on the disk (to get it in yaml format).
+![Download API](./images/oas2-swagger-ori-download.png "Download API")
 
-![toto](./images/swagger-ori-download-location.png "toto")
+![Browse API](./images/swagger-ori-download-location.png "Browse API")
 
 After slightly adapting the API everythings is working for more information see at the end the chapter explanations.
-To facilitate the operation, I provide in this article the corrected API specifications (See original table at the top). So you can simply upload the corrected version and start ot use it.
+To facilitate the operation, I provide in this article the corrected API specifications (See original table at the top). So you can simply upload the corrected version and start ot use it.end
+
 Below activating the "corrected" API.
-![toto](./images/swagger-activate.png "toto")
+![Activate API](./images/swagger-activate.png "Activate API")
 Then testing it
-![toto](./images/swagger-test-tab.png "toto")
+![Test API](./images/swagger-test-tab.png "Test API")
 
 ### Load from OAS 3
 
 When using the Open API V3, the import of the API is slightly different as explained here.
 
-![toto](./images/oas3-addapi.png "toto")
-![toto](./images/oas3-select-openapi-json.png "toto")
-![toto](./images/oas3-addapi-edit.png "toto")
+![Add API](./images/oas3-addapi.png "Add API")
 
-![toto](./images/oas3-addapi-activate.png "toto")
+![Select API](./images/oas3-select-openapi-json.png "Select API")
 
-![toto](./images/oas3-addapi-add.png "toto")
+![Edit API](./images/oas3-addapi-edit.png "Edit API")
+
+![Activate API](./images/oas3-addapi-activate.png "Activate API")
+
+![Last step](./images/oas3-addapi-add.png "Last step")
 
 The API does not contain errors but we need to remove the oauth config.
 
@@ -84,7 +87,7 @@ This chapter explains in more details the changes operated. You can also use the
 
 ### Changes
 
-- Remove the security deifintion relating to oauth: petstore_auth
+- Remove the security definition relating to oauth: petstore_auth
 - For the Invoke, change the target-url to be target-url: $(target-url)$(request.path)$(request.search) instead of target-url: $(target-url)$(request.path)
 - Change the security definition for API Key to be:
 
