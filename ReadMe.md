@@ -88,7 +88,7 @@ This chapter explains in more details the changes operated. You can also use the
 ### Changes
 
 - Remove the security definition relating to oauth: petstore_auth
-- For the Invoke, change the target-url to be target-url: $(target-url)$(request.path)$(request.search) instead of target-url: $(target-url)$(request.path)
+- For the Invoke, change the target-url to be target-url: `$(target-url)$(request.path)$(request.search)` instead of target-url: $(target-url)$(request.path)
 - Change the security definition for API Key to be:
 
 ```yaml
